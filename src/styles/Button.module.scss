@@ -1,0 +1,35 @@
+.button {
+    font-size: 20px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.ghost {
+    border: 1px solid blue;
+    color: blue;
+}
+
+.normal {
+    background: blue;
+}
+
+.link {
+    background: transparent;
+    border: none;
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    background: green;
+}
+
+.link .icon {
+    background: cornflowerblue;
+}

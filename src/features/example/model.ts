@@ -1,0 +1,3 @@
+// Write model here
+
+export {};

@@ -1,0 +1,88 @@
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh);
+
+    /*header*/
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+
+    color: white;
+}
+
+@keyframes scale-up {
+    from {
+    }
+    to {
+        transform: scale(1.4);
+    }
+}
+
+.sideWrapper {
+    position: fixed;
+    top: 0;
+    left: 80px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.decor {
+    min-height: 40vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.decor > span {
+    background: rgba(255, 255, 255, 0.9);
+    height: 13vh;
+    min-width: 5px;
+}
+
+.decor > span:nth-child(2) {
+    background: rgba(255, 255, 255, 0.5);
+    height: 13vh;
+    min-width: 5px;
+}
+
+.content {
+    padding-left: 15%;
+    z-index: 1;
+}
+
+.slidesCounter {
+    max-width: 300px;
+    padding-top: 160px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 24px;
+    align-items: center;
+    color: white;
+}
+
+.currentSlide {
+    font-weight: bold;
+}
+
+.slidesSpacer {
+    height: 2px;
+    width: 150px;
+    background: white;
+    margin: 0 40px 0 40px;
+}
+
+.text {
+    font-size: 64px;
+    color: white;
+}
+
+.bold {
+    font-weight: bold;
+}

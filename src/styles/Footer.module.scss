@@ -1,0 +1,33 @@
+@import "./variables.scss";
+
+.footer {
+    width: 100%;
+    height: $footerHeight;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.footer > header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: 200px;
+    height: 200px;
+    background: white;
+    opacity: 0.5;
+}
+
+.content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}

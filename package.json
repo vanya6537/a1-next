@@ -2,21 +2,33 @@
   "name": "a1-next",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": " next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss}\""
   },
   "dependencies": {
-    "next": "12.0.8",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@next/bundle-analyzer": "^12.0.8",
+    "@react-three/drei": "^8.4.0",
+    "@react-three/fiber": "^7.0.24",
+    "@types/next-seo": "^2.1.2",
+    "@types/three": "^0.136.1",
+    "classnames": "^2.3.1",
+    "framer-motion": "^5.6.0",
+    "next": "^12.0.8",
+    "next-seo": "^4.28.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.48.0",
+    "three": "^0.136.0"
   },
   "devDependencies": {
-    "@types/node": "17.0.8",
-    "@types/react": "17.0.38",
-    "eslint": "8.6.0",
+    "@types/node": "^17.0.8",
+    "@types/react": "^17.0.38",
+    "eslint": "^8.6.0",
     "eslint-config-next": "12.0.8",
+    "prettier": "^2.5.1",
     "typescript": "4.5.4"
   }
 }

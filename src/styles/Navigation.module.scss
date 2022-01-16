@@ -1,0 +1,64 @@
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /*overflow: hidden;*/
+  padding: 20px;
+  background: transparent;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  flex-grow: 1;
+}
+
+.dropdown {
+  > ul {
+    padding-top: 8px;
+  }
+  > ul > li {
+    line-height: 24px;
+  }
+}
+
+.links > li {
+  margin-right: 24px;
+  position: relative;
+}
+
+.phone {
+  width: 300px;
+}
+
+.phoneIcon {
+}
+
+.links > li > ul {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.links > li > ul > li {
+  line-height: 24px;
+}
+
+.links > li:hover > ul,
+.links > li > ul:hover {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 160px;
+  height: 160px;
+}
