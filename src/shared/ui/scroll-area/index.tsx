@@ -18,7 +18,9 @@ export const ScrollArea: FC<ScrollerProps> = ({ children }) => {
     const bgSections = useRef();
     const onScroll = (e) => (state.top.current = e.target.scrollTop);
     const router = useRouter();
-    useEffect(() => void onScroll({ target: bgSections.current }), []);
+    useEffect(() => {
+        onScroll({ target: bgSections.current });
+    }, []);
 
     let ScrollableContent;
 
@@ -32,40 +34,51 @@ export const ScrollArea: FC<ScrollerProps> = ({ children }) => {
         default:
             ScrollableContent = ScrollableHomePage({ onScroll });
     }
+
+    const resetScroll = () => {
+        window.scrollTo(0, 0);
+        state.top.current = 0;
+    };
+
+    useEffect(() => {
+        resetScroll();
+        console.log('route change to ' + router.asPath);
+    }, [router.asPath]);
+
     return (
         <>
             <div className={styles.scrollArea} onScroll={onScroll}>
                 <AnimatePresence
-                    exitBeforeEnter
-                    onExitComplete={() => window.scrollTo(0, 0)}
+                    // exitBeforeEnter
+                    onExitComplete={resetScroll}
                 >
                     {/*<ScrollableContent />*/}
-                    {router.route === '/' && (
+                    {router.asPath === '/' && (
                         <AnimatedLayout>
                             <ScrollableHomePage />
                         </AnimatedLayout>
                     )}
-                    {router.route === '/services/private' && (
+                    {router.asPath === '/services/private' && (
                         <AnimatedLayout>
                             <ScrollablePrivateBuyPage />
                         </AnimatedLayout>
                     )}
-                    {router.route === '/services/mortgage' && (
+                    {router.asPath === '/services/mortgage' && (
                         <AnimatedLayout>
                             <ScrollableMortgagePage />
                         </AnimatedLayout>
                     )}
-                    {router.route === '/services/investments' && (
+                    {router.asPath === '/services/investments' && (
                         <AnimatedLayout>
                             <ScrollableInvestmentsPage />
                         </AnimatedLayout>
                     )}
-                    {router.route === '/about-us' && (
+                    {router.asPath === '/about-us' && (
                         <AnimatedLayout>
                             <ScrollableAboutUsPage />
                         </AnimatedLayout>
                     )}
-                    {router.route === '/team' && (
+                    {router.asPath === '/team' && (
                         <AnimatedLayout>
                             <ScrollableAboutUsPage />
                         </AnimatedLayout>

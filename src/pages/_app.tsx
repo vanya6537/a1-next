@@ -7,7 +7,7 @@ import { DefaultSeo } from 'next-seo';
 import React, { Suspense } from 'react';
 import 'src/styles/globals.scss';
 import { Layout } from 'src/shared/ui/layout';
-import { ScrollArea } from 'src/shared/ui/scrollArea';
+import { ScrollArea } from 'src/shared/ui/scroll-area';
 import { CustomCanvas } from 'src/features/threejs/ui/canvas';
 import { Diamonds } from 'src/features/threejs/ui/diamonds';
 import { StartPlane } from 'src/features/threejs/ui/start-plane';
