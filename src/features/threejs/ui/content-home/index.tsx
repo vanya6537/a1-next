@@ -39,7 +39,11 @@ export const ContentHome: FC<any> = ({ title = 'A1 Group' }) => {
                     <Text
                         left
                         size={w * 0.15}
-                        position={[-w / 3.2, 0.5, -1]}
+                        position={[
+                            -w / 1.7,
+                            mobile ? -canvasHeight / 6 : 0.5,
+                            -1,
+                        ]}
                         color="#d40749"
                     >
                         {title}

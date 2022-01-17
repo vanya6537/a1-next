@@ -19,6 +19,7 @@
 }
 
 .content {
+    padding-right: 7%;
     padding-left: 7%;
     z-index: 1;
     height: 100vh;
@@ -59,10 +60,9 @@
 }
 
 .text {
-    font-size: 48px;
+    font-size: 32px;
     color: white;
     margin-right: 30px;
-
 }
 
 .bold {
@@ -81,6 +81,11 @@
 
     .content{
         padding-left: 15%;
+        padding-right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .hero{
         padding-right: 0;
