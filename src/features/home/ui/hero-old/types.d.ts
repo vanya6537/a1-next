@@ -1,3 +1,0 @@
-interface HeroScreenProps {
-    className?: string;
-}

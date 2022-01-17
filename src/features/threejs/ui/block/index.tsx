@@ -1,6 +1,11 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import React, { createContext, FC, useContext, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { lerp, state } from '../../lib';
+import { motion } from 'framer-motion-3d';
 
 const offsetContext = createContext(0);
 
@@ -19,12 +24,15 @@ const Block: FC<any> = ({ children, offset, factor, ...props }) => {
     });
     return (
         <offsetContext.Provider value={offset}>
-            <group
+            <motion.group
                 {...props}
                 position={[0, -sectionHeight * offset * factor, 0]}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
             >
-                <group ref={ref}>{children}</group>
-            </group>
+                <motion.group ref={ref}>{children}</motion.group>
+            </motion.group>
         </offsetContext.Provider>
     );
 };

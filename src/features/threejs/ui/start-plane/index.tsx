@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import React, { FC, useEffect, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { lerp, state } from 'src/features/threejs/lib';
@@ -15,19 +19,12 @@ export const StartPlane: FC = () => {
                 0.025
             ))
     );
-
-    const scroll = useScroll();
-    // console.log({ height });
-    useFrame(() => {
-        // console.log(scroll.range(0, 1));
-        console.log(scroll.offset);
-        return (state.top.current = scroll.offset * state.pages * height);
-        // console.log(scroll.range(0, 1));
-    });
-
-    // useEffect(() => {
-    //     onScroll({ target: scrollArea.current });
-    // }, []);
+    //
+    // const scroll = useScroll();
+    // useFrame(() => {
+    //     console.log(scroll.offset);
+    //     return (state.top.current = scroll.offset * state.pages * height);
+    // });
 
     return (
         <Plane

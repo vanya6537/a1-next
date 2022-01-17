@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import { Object3D, WebGLRenderTarget } from 'three';
 import React, { FC, useLayoutEffect, useMemo, useRef } from 'react';
 import { useFrame, useLoader, useThree } from '@react-three/fiber';

@@ -1,11 +1,17 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
-import { useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import React, { Suspense } from 'react';
 import 'src/styles/globals.scss';
-import { Footer, Navigation } from 'src/shared/ui';
 import { Layout } from 'src/shared/ui/layout';
+import { ScrollArea } from 'src/shared/ui/scrollArea';
+import { CustomCanvas } from 'src/features/threejs/ui/canvas';
+import { Diamonds } from 'src/features/threejs/ui/diamonds';
+import { StartPlane } from 'src/features/threejs/ui/start-plane';
+import { Html } from '@react-three/drei';
 
 declare const window: any;
 
@@ -50,13 +56,14 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
                 canonical={url}
             />
             <Layout>
-                {/*<AnimatePresence*/}
-                {/*    exitBeforeEnter*/}
-                {/*    initial={false}*/}
-                {/*    onExitComplete={() => window.scrollTo(0, 0)}*/}
-                {/*>*/}
-                <Component {...pageProps} canonical={url} key={url} />
-                {/*</AnimatePresence>*/}
+                <CustomCanvas>
+                    <Suspense fallback={<Html center>Loading...</Html>}>
+                        <Component {...pageProps} canonical={url} key={url} />
+                    </Suspense>
+                    <Diamonds />
+                    <StartPlane />
+                </CustomCanvas>
+                <ScrollArea />
             </Layout>
         </>
     );

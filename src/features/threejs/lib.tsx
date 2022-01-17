@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import { createRef } from 'react';
 import { Vector3 } from 'three';
 
@@ -9,15 +13,15 @@ let state: any = {
         {
             offset: 1,
             factor: 1.75,
-            header: 'District 4',
-            image: '/images/house-bg.jpg',
+            header: 'Block 1',
+            image: '/images/12.jpg',
             aspect: 1.51,
             text: 'Two thousand pharmacologists and bio-chemists were subsidized. Six years later it was being produced commercially.',
         },
         {
             offset: 2,
             factor: 2.0,
-            header: 'Diamond Road',
+            header: 'Block 2',
             image: '/images/1.jpg',
             aspect: 1.5,
             text: 'The man who comes back through the Door in the Wall will never be quite the same as the man who went out. He will be wiser but less sure, happier but less self-satisfied, humbler in acknowledging his ignorance yet better equipped to understand the relationship of words to things, of systematic reasoning to the unfathomable mystery which it tries, forever vainly, to comprehend.',
@@ -25,7 +29,7 @@ let state: any = {
         {
             offset: 3,
             factor: 2.25,
-            header: 'Catalina',
+            header: 'Block 3',
             image: '/images/4.jpg',
             aspect: 1.5037,
             text: "The substance can take you to heaven but it can also take you to hell. Or else to both, together or alternately. Or else (if you're lucky, or if you've made yourself ready) beyond either of them. And then beyond the beyond, back to where you started from — back to here, back to New Rotham sted, back to business as usual. Only now, of course, business as usual is completely different.",
@@ -33,7 +37,7 @@ let state: any = {
         {
             offset: 4,
             factor: 2.0,
-            header: 'Building 21',
+            header: 'Block 4',
             image: '/images/7.jpg',
             aspect: 0.665,
             text: 'We’ve found that the people whose EEG doesn’t show any alpha-wave activity when they’re relaxed aren’t likely to respond significantly to the substance. That means that, for about fifteen percent of the population, we have to find other approaches to liberation.',
@@ -41,7 +45,7 @@ let state: any = {
         {
             offset: 5,
             factor: 1.75,
-            header: 'Sector 8',
+            header: 'Block 5',
             image: '/images/9.jpg',
             aspect: 1.55,
             text: 'By cultivating the state of mind that makes it possible for the dazzling ecstatic insights to become permanent and habitual illuminations. By getting to know oneself to the point where one won’t be compelled by one’s unconscious to do all the ugly, absurd, self-stultifying things that one so often finds oneself doing.',
@@ -49,8 +53,8 @@ let state: any = {
         {
             offset: 7,
             factor: 1.05,
-            header: 'The Factory',
-            image: '/images/house-bg.jpg',
+            header: 'Block 6',
+            image: '/images/7.jpg',
             aspect: 1.77,
             text: 'Education and enlightenment.',
         },
@@ -77,6 +81,7 @@ let state: any = {
         { x: 0, offset: 8, pos: new Vector3(), scale: 2.5, factor: 6 },
     ],
     top: createRef<any>(),
+    scrollableContent: createRef<any>(),
 };
 
 function lerp(v0, v1, t) {

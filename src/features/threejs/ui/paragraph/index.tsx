@@ -1,9 +1,15 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import { Block, useBlock } from 'src/features/threejs/ui/block';
 import { state } from 'src/features/threejs/lib';
 import { Plane } from 'src/features/threejs/ui/plane';
 import { Html } from '@react-three/drei';
 import { Text } from 'src/features/threejs/ui/text';
 import React, { FC } from 'react';
+import { motion } from 'framer-motion-3d';
+import { transition } from 'src/shared/lib';
 
 export const Paragraph: FC<any> = ({
     image,
@@ -22,7 +28,12 @@ export const Paragraph: FC<any> = ({
     const color = index % 2 ? '#D40749' : '#2FE8C3';
     return (
         <Block factor={factor} offset={offset}>
-            <group position={[left ? -alignRight : alignRight, 0, 0]}>
+            <motion.group
+                // whileInView={transition}
+                // viewport={{ once: true }}
+                transition={transition}
+                position={[left ? -alignRight : alignRight, 0, 0]}
+            >
                 <Plane
                     map={image}
                     args={[1, 1, 32, 32]}
@@ -73,7 +84,7 @@ export const Paragraph: FC<any> = ({
                         {'0' + (index + 1)}
                     </Text>
                 </Block>
-            </group>
+            </motion.group>
         </Block>
     );
 };

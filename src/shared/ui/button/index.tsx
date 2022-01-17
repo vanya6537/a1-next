@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import { FC } from 'react';
 import { ButtonProps, ButtonVariantProp } from './types';
 import styles from 'src/styles/Button.module.scss';

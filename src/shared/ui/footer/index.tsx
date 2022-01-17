@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import React, { FC } from 'react';
 import styles from 'src/styles/Footer.module.scss';
 import Link from 'next/link';

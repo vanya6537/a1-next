@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import React, { forwardRef, useRef } from 'react';
 import { extend, useFrame } from '@react-three/fiber';
 import { useBlock } from '../block';

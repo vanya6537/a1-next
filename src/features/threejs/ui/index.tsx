@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 // import { BackfaceMaterial } from 'src/features/threejs/ui/backface-material';
 // import { Block, useBlock } from 'src/features/threejs/ui/block';
 // import { MultilineText, Text } from 'src/features/threejs/ui/text';

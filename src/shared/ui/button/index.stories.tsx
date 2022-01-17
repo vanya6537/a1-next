@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 // import { Button } from './index';
 //
 // import { ComponentStory, ComponentMeta } from '@storybook/react';

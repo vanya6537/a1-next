@@ -1,10 +1,14 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 .button {
-    background-image: linear-gradient(
-        to right,
-        #003973 0%,
-        #e5e5be 51%,
-        #003973 100%
-    );
+    /*background-image: linear-gradient(*/
+    /*    to right,*/
+    /*    rgba(255, 255, 255, 0.02),*/
+    /*    rgba(255, 255, 255, 0.07) 51%,*/
+    /*    rgba(255, 255, 255, 0.08) 100%*/
+    /*);*/
 }
 
 .button {
@@ -12,16 +16,22 @@
     padding: 15px 45px;
     text-align: center;
     text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
+    /*transition: 0.5s;*/
+    /*background-size: 200% auto;*/
     color: white;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+    /*box-shadow: 0 0 1px rgba(238, 238, 238, 0.16);*/
+    border-radius: 2px;
+    border: 2px solid white;
+    /*border-radius: 10px;*/
     display: block;
+    background: transparent;
+    font-size: 20px;
 }
 
 .button:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
 }

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import React, { FC } from 'react';
 import styles from 'src/styles/Navigation.module.scss';
 import Link from 'next/link';
@@ -48,10 +52,9 @@ export const Navigation: FC<NavigationProps> = () => {
                     />
                 </li>
             </ul>
-            <div className={styles.phone}>
-                [<span className={styles.phoneIcon}>/I/ </span>
-                <span>+7 (917) 136-94-36</span>]
-            </div>
+            <a className={styles.phone} href="tel:+79171369436">
+                [ +7 (917) 136-94-36 ]
+            </a>
         </nav>
     );
 };

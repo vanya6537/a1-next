@@ -1,86 +1,90 @@
+/*!
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 // Basic Styles
 .dropdown {
-  //padding: 20px 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //color: white;
-  //background: #C06162;
-  //background: #34495e;
-  position: relative;
-  //font-size: 18px;
-  //perspective: 1000px;
-  z-index: 100;
+    //padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //color: white;
+    //background: #C06162;
+    //background: #34495e;
+    position: relative;
+    //font-size: 18px;
+    //perspective: 1000px;
+    z-index: 100;
 
-  &:hover {
-    //background: #2980b9;
-    cursor: pointer
-  }
+    &:hover {
+        //background: #2980b9;
+        cursor: pointer;
+    }
 
-  &:hover .dropdownMenu li {
-    display: block
-  }
+    &:hover .dropdownMenu li {
+        display: block;
+    }
 
-  > .dropdownMenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    perspective: 1000px;
-    z-index: -1
-  }
+    > .dropdownMenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        //width: 100%;
+        perspective: 1000px;
+        z-index: -1;
+    }
 
-  > li {
-    display: none;
-    color: white;
-    //background-color: #34495e;
-    padding: 10px 20px;
-    font-size: 16px;
-    opacity: 0;
-  }
+    > li {
+        display: none;
+        color: white;
+        //background-color: #34495e;
+        padding: 10px 20px;
+        font-size: 16px;
+        opacity: 0;
+    }
 
-  &:hover {
-    //background-color: #2980b9;
-    cursor: pointer;
-  }
+    &:hover {
+        //background-color: #2980b9;
+        cursor: pointer;
+    }
 }
 
 // Animations
 .dropdown:hover .dropdownMenuAnimated {
-  display: block
+    display: block;
 }
 
 .dropdownMenuAnimated {
-  display: none;
-  > li {
-    display: block;
-    opacity: 0
-  }
+    display: none;
+    > li {
+        display: block;
+        opacity: 0;
+    }
 }
 
 // Menu Items Animated invidually
 
 .dropdownMenuEach {
-  @for $i from 1 through 5 {
-    .dropdownItem#{$i} {
-      transform-origin: top center;
-      animation: rotateZ 300ms ($i * 60ms) ease-in-out forwards;
+    @for $i from 1 through 5 {
+        .dropdownItem#{$i} {
+            transform-origin: top center;
+            animation: rotateZ 300ms ($i * 60ms) ease-in-out forwards;
+        }
     }
-  }
 }
 
 @keyframes rotateZ {
-  0% {
-    opacity: 0;
-    transform: translateZ(290px);
-  }
+    0% {
+        opacity: 0;
+        transform: translateZ(290px);
+    }
 
-  80% {
-    transform: translateZ(10px);
-  }
+    80% {
+        transform: translateZ(10px);
+    }
 
-  100% {
-    opacity: 1;
-    transform: translateZ(0);
-  }
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
+    }
 }

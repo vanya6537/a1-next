@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import { Vector3 } from 'three';
 import { Font, FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
@@ -5,7 +9,8 @@ import React, { FC, useCallback, useEffect, useRef } from 'react';
 import { extend, useFrame, useLoader } from '@react-three/fiber';
 import { lerp, state } from '../../lib';
 import { CustomMaterial } from 'src/features/threejs/ui/custom-material';
-
+import { motion } from 'framer-motion-3d';
+import { transition } from 'src/shared/lib';
 extend({ TextGeometry, CustomMaterial });
 const Text: FC<any> = ({
     children,
@@ -58,16 +63,24 @@ const Text: FC<any> = ({
     }, [data]);
 
     return (
-        <group {...props} scale={[size, size, 0.1]}>
-            <mesh geometry={geom} onUpdate={onUpdate} frustumCulled={false}>
+        <motion.group
+            {...props}
+            scale={[size, size, 0.1]}
+            transition={transition}
+        >
+            <motion.mesh
+                geometry={geom}
+                onUpdate={onUpdate}
+                frustumCulled={false}
+            >
                 <customMaterial
                     ref={ref}
                     color={color}
                     transparent
                     opacity={opacity}
                 />
-            </mesh>
-        </group>
+            </motion.mesh>
+        </motion.group>
     );
 };
 

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 import { useLoader } from '@react-three/fiber';
 import { LinearFilter, TextureLoader } from 'three';
 import { state } from 'src/features/threejs/lib';
@@ -7,9 +11,8 @@ import { MultilineText, Text } from 'src/features/threejs/ui/text';
 import { Plane } from 'src/features/threejs/ui/plane';
 import { Html } from '@react-three/drei';
 import { Paragraph } from 'src/features/threejs/ui/paragraph';
-import { HeroScreen } from 'src/features/home/ui/hero-old';
 
-export const ContentHome: FC = () => {
+export const ContentHome: FC<any> = ({ title = 'A1 Group' }) => {
     const images = useLoader(
         TextureLoader,
         state.paragraphs.map(({ image }) => image)
@@ -39,7 +42,7 @@ export const ContentHome: FC = () => {
                         position={[-w / 3.2, 0.5, -1]}
                         color="#d40749"
                     >
-                        A1 Group
+                        {title}
                     </Text>
                 </Block>
                 <Block factor={1.0}>
@@ -93,6 +96,7 @@ export const ContentHome: FC = () => {
                 </Html>
             </Block>
 
+            {/* This way will not work, need refactoring of scroll component. custom implementation sucks */}
             {/*<Html fullscreen>*/}
             {/*    <HeroScreen />*/}
             {/*</Html>*/}

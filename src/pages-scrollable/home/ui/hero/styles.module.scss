@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 .hero {
     position: relative;
     width: 100%;
@@ -5,9 +9,9 @@
 
     /*header*/
     padding-top: 80px;
-    display: flex;
-    flex-direction: row;
-
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    //pointer-events: none;
     color: white;
 }
 
@@ -19,42 +23,21 @@
     }
 }
 
-.sideWrapper {
-    position: fixed;
-    top: 0;
-    left: 80px;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.decor {
-    min-height: 40vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.decor > span {
-    background: rgba(255, 255, 255, 0.9);
-    height: 13vh;
-    min-width: 5px;
-}
-
-.decor > span:nth-child(2) {
-    background: rgba(255, 255, 255, 0.5);
-    height: 13vh;
-    min-width: 5px;
-}
-
 .content {
     padding-left: 15%;
     z-index: 1;
-}
 
+    > .rectangle {
+        pointer-events: none;
+    }
+    > .slidesCounter {
+        pointer-events: none;
+    }
+
+    > .text {
+        pointer-events: none;
+    }
+}
 .slidesCounter {
     max-width: 300px;
     padding-top: 160px;

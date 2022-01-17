@@ -1,10 +1,14 @@
+/*!
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 .layout > header {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     //padding-left: 60px;
-    z-index: 1;
+    z-index: 999;
 }
 
 .layout {
@@ -13,7 +17,7 @@
     display: block;
 }
 
-.layout> main {
+.layout > main {
     //overflow: hidden;
     //display: flex;
     //flex-direction: column;
@@ -21,7 +25,6 @@
     //align-content: center;
     height: calc(100vh);
 }
-
 
 .scrollArea {
     overscroll-behavior: none;

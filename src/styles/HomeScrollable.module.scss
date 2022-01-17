@@ -1,13 +1,17 @@
+/*!
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
 .hero {
     position: relative;
     width: 100%;
     min-height: calc(100vh);
-
+    overflow-scrolling: auto;
     /*header*/
-    padding-top: 80px;
+    //padding-top: 80px;
     /*display: flex;*/
     /*flex-direction: row;*/
-
+    //pointer-events: none;
     color: white;
 }
 
@@ -22,19 +26,31 @@
 .content {
     padding-left: 15%;
     z-index: 1;
-}
 
+    > .rectangle {
+        pointer-events: none;
+    }
+    > .slidesCounter {
+        pointer-events: none;
+    }
+
+    > .text {
+        pointer-events: none;
+    }
+}
 .slidesCounter {
     max-width: 300px;
-    padding-top: 160px;
-    padding-bottom: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 24px;
     align-items: center;
     color: white;
+
+    padding-top: 80px;
+    padding-bottom: 40px;
+    font-size: 16px;
 }
+
 
 .currentSlide {
     font-weight: bold;
@@ -54,4 +70,18 @@
 
 .bold {
     font-weight: bold;
+}
+
+@media (min-width: 400px) {
+
+
+    .slidesSpacer {
+        width: 150px;
+        margin: 0 40px 0 40px;
+    }
+    .slidesCounter{
+        padding-top: 160px;
+        padding-bottom: 80px;
+        font-size: 24px;
+    }
 }
