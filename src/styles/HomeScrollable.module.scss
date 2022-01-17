@@ -24,6 +24,10 @@
     z-index: 1;
     height: 100vh;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     > .rectangle {
         pointer-events: none;
     }
@@ -83,9 +87,7 @@
         padding-left: 15%;
         padding-right: 0;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+     display: block
     }
     .hero{
         padding-right: 0;
