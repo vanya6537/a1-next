@@ -7,10 +7,10 @@ import styles from 'src/styles/HomeScrollable.module.scss';
 import Link from 'next/link';
 import { Button } from 'src/features/home/ui/button';
 import cn from 'classnames';
-import { motion } from 'framer-motion';
+
 export const HeroContent: FC<HeroContentProps> = ({ className }) => {
     return (
-        <motion.section className={cn(className, styles.hero)}>
+        <section className={cn(className, styles.hero)}>
             <div className={styles.content}>
                 <div className={styles.slidesCounter}>
                     <span className={styles.currentSlide}>01</span>
@@ -27,6 +27,6 @@ export const HeroContent: FC<HeroContentProps> = ({ className }) => {
                     <Button>Получить помощь</Button>
                 </Link>
             </div>
-        </motion.section>
+        </section>
     );
 };
