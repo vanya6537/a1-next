@@ -46,7 +46,6 @@
     font-size: 16px;
 }
 
-
 .currentSlide {
     font-weight: bold;
 }
@@ -68,13 +67,11 @@
 }
 
 @media (min-width: 400px) {
-
-
     .slidesSpacer {
         width: 150px;
         margin: 0 40px 0 40px;
     }
-    .slidesCounter{
+    .slidesCounter {
         padding-top: 160px;
         padding-bottom: 80px;
         font-size: 24px;

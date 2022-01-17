@@ -3,107 +3,105 @@
  */
 
 .header {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  /*overflow: hidden;*/
-  padding: 20px;
-  //background: transparent;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /*overflow: hidden;*/
+    padding: 20px;
+    //background: transparent;
 
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  white-space: nowrap;
-  background: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: end;
-  flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    flex-grow: 1;
 }
 
 .dropdown {
-  > ul {
-    //padding-top: 8px;
+    > ul {
+        //padding-top: 8px;
 
-    //padding: 30px 20px 20px 20px;
-    transform: translateX(-20px);
-  }
-
-  > ul > li {
-    background: rgba(0, 0, 0, 0.6);
-    //line-height: 32px;
-    padding: 20px 10px;
-
-    &:first-child {
-      margin-top: 30px;
+        //padding: 30px 20px 20px 20px;
+        transform: translateX(-20px);
     }
-  }
+
+    > ul > li {
+        background: rgba(0, 0, 0, 0.6);
+        //line-height: 32px;
+        padding: 20px 10px;
+
+        &:first-child {
+            margin-top: 30px;
+        }
+    }
 }
 
 .links > li {
-  &:first-child {
-    margin-left: 12px;
-  }
+    &:first-child {
+        margin-left: 12px;
+    }
 
-  margin-right: 12px;
-  position: relative;
-
+    margin-right: 12px;
+    position: relative;
 }
 
 .phone {
-  text-align: center;
-  width: 200px;
-  vertical-align: middle;
-  line-height: 40px;
-}
-
-@media (min-width: 400px) {
-  .links > li {
-    &:first-child {
-      margin-left: 24px;
-    }
-
-    margin-right: 24px;
-    position: relative;
-  }
-  .phone {
-    text-align: left;
+    text-align: center;
     width: 200px;
     vertical-align: middle;
     line-height: 40px;
-  }
-
-  .header {
-    font-size: 16px;
-  }
 }
 
+@media (min-width: 400px) {
+    .links > li {
+        &:first-child {
+            margin-left: 24px;
+        }
+
+        margin-right: 24px;
+        position: relative;
+    }
+    .phone {
+        text-align: left;
+        width: 200px;
+        vertical-align: middle;
+        line-height: 40px;
+    }
+
+    .header {
+        font-size: 16px;
+    }
+}
 
 .phoneIcon {
 }
 
 .links > li > ul {
-  font-size: 12px;
-  font-weight: normal;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 .links > li > ul > li {
-  line-height: 24px;
+    line-height: 24px;
 }
 
 .links > li:hover > ul,
 .links > li > ul:hover {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 24px;
-  width: 160px;
-  height: 160px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 24px;
+    width: 160px;
+    height: 160px;
 }
