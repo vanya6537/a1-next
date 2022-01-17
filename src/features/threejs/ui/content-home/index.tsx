@@ -40,7 +40,7 @@ export const ContentHome: FC<any> = ({ title = 'A1 Group' }) => {
                         left
                         size={w * 0.15}
                         position={[
-                            -w / 1.7,
+                            -w / 1.8,
                             mobile ? -canvasHeight / 6 : 0.5,
                             -1,
                         ]}
