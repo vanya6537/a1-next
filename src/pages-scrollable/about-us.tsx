@@ -4,7 +4,6 @@
 
 import type { NextPage } from 'next';
 import React from 'react';
-import { AnimatedLayout } from 'src/shared/ui/animated-layout';
 
 const ScrollableAboutUsPage: NextPage = () => {
     return <h1 style={{ padding: '30% 30%' }}>О компании</h1>;
