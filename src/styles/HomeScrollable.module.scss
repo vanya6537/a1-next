@@ -19,8 +19,9 @@
 }
 
 .content {
-    padding-left: 15%;
+    padding-left: 7%;
     z-index: 1;
+    height: 100vh;
 
     > .rectangle {
         pointer-events: none;
@@ -58,15 +59,35 @@
 }
 
 .text {
-    font-size: 64px;
+    font-size: 48px;
     color: white;
+    margin-right: 30px;
+
 }
 
 .bold {
     font-weight: bold;
 }
 
+.button {
+    position: absolute;
+    bottom: 40px;
+}
+
 @media (min-width: 400px) {
+    .button {
+        position: relative;
+    }
+
+    .content{
+        padding-left: 15%;
+    }
+    .hero{
+        padding-right: 0;
+    }
+    .text {
+        font-size: 64px;
+    }
     .slidesSpacer {
         width: 150px;
         margin: 0 40px 0 40px;

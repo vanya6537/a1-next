@@ -24,7 +24,7 @@ export const HeroContent: FC<HeroContentProps> = ({ className }) => {
                     <span className={styles.bold}>КОТОРУЮ ТЫ ХОЧЕШЬ</span>
                 </p>
                 <Link href={'/about-us'}>
-                    <Button>Получить помощь</Button>
+                    <Button className={styles.button}>Получить помощь</Button>
                 </Link>
             </div>
         </section>
