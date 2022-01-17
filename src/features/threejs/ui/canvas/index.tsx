@@ -20,9 +20,7 @@ export const CustomCanvas: FC = ({ children }) => {
                 position: [0, 0, 500],
             }}
         >
-            <Suspense fallback={<Html center>Loading...</Html>}>
-                {children}
-            </Suspense>
+            <Suspense fallback={null}>{children}</Suspense>
         </Canvas>
     );
 };

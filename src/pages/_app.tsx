@@ -11,7 +11,6 @@ import { ScrollArea } from 'src/shared/ui/scrollArea';
 import { CustomCanvas } from 'src/features/threejs/ui/canvas';
 import { Diamonds } from 'src/features/threejs/ui/diamonds';
 import { StartPlane } from 'src/features/threejs/ui/start-plane';
-import { Html } from '@react-three/drei';
 
 declare const window: any;
 
@@ -57,7 +56,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
             />
             <Layout>
                 <CustomCanvas>
-                    <Suspense fallback={<Html center>Loading...</Html>}>
+                    <Suspense fallback={null}>
                         <Component {...pageProps} canonical={url} key={url} />
                     </Suspense>
                     <Diamonds />
