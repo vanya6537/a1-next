@@ -13,40 +13,28 @@ import ScrollableAboutUsPage from 'src/pages-scrollable/about-us';
 import ScrollablePrivateBuyPage from 'src/pages-scrollable/services/private';
 
 export const ScrollArea: FC<ScrollerProps> = ({ children }) => {
-    const bgSections = useRef();
-    const onScroll = (e) => (state.top.current = e.target.scrollTop);
+    const scrollArea = useRef<any>();
+
     const router = useRouter();
-    useEffect(() => {
-        onScroll({ target: bgSections.current });
-    }, []);
 
-    let ScrollableContent;
-
-    switch (router.asPath) {
-        case '/services/mortgage':
-            ScrollableContent = ScrollableMortgagePage;
-            break;
-        case '/services/investments':
-            ScrollableContent = ScrollableInvestmentsPage;
-            break;
-        default:
-            ScrollableContent = ScrollableHomePage({ onScroll });
-    }
-
-    const resetScroll = () => {
-        window.scrollTo(0, 0);
-        state.top.current = 0;
-    };
+    const onScroll = (e) => (state.top.current = e.target.scrollTop);
 
     useEffect(() => {
-        resetScroll();
+        onScroll({ target: scrollArea?.current });
+    }, [onScroll]);
+
+    useEffect(() => {
         console.log('route change to ' + router.asPath);
+        scrollArea.current.scrollTo(0, 0);
     }, [router.asPath]);
 
     return (
         <>
-            <div className={styles.scrollArea} onScroll={onScroll}>
-                {/*<ScrollableContent />*/}
+            <div
+                ref={scrollArea}
+                className={styles.scrollArea}
+                onScroll={onScroll}
+            >
                 {router.asPath === '/' && (
                     <div className={styles.fadeIn}>
                         <ScrollableHomePage />
@@ -86,9 +74,6 @@ export const ScrollArea: FC<ScrollerProps> = ({ children }) => {
                         }}
                     />
                 ))}
-            </div>
-            <div ref={bgSections} onScroll={onScroll}>
-                {children}
             </div>
         </>
     );
