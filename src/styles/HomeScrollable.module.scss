@@ -66,7 +66,8 @@
 .text {
     font-size: 48px;
     color: white;
-    margin-right: 30px;
+    //margin-right: 30px;
+    text-align: center;
 }
 
 .bold {
@@ -81,19 +82,21 @@
 @media (min-width: 500px) {
     .button {
         position: relative;
+        bottom: 0;
     }
 
     .content{
         padding-left: 15%;
         padding-right: 0;
 
-     display: block
+        display: block;
     }
     .hero{
         padding-right: 0;
     }
     .text {
         font-size: 64px;
+        text-align: start;
     }
     .slidesSpacer {
         width: 150px;
