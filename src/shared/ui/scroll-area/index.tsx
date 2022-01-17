@@ -9,9 +9,7 @@ import { useRouter } from 'next/router';
 import ScrollableHomePage from 'src/pages-scrollable';
 import ScrollableInvestmentsPage from 'src/pages-scrollable/services/investments';
 import ScrollableMortgagePage from 'src/pages-scrollable/services/mortgage';
-import { AnimatePresence } from 'framer-motion';
 import ScrollableAboutUsPage from 'src/pages-scrollable/about-us';
-import { AnimatedLayout } from 'src/shared/ui/animated-layout';
 import ScrollablePrivateBuyPage from 'src/pages-scrollable/services/private';
 
 export const ScrollArea: FC<ScrollerProps> = ({ children }) => {
@@ -48,42 +46,37 @@ export const ScrollArea: FC<ScrollerProps> = ({ children }) => {
     return (
         <>
             <div className={styles.scrollArea} onScroll={onScroll}>
-                <AnimatePresence
-                    // exitBeforeEnter
-                    onExitComplete={resetScroll}
-                >
-                    {/*<ScrollableContent />*/}
-                    {router.asPath === '/' && (
-                        <AnimatedLayout>
-                            <ScrollableHomePage />
-                        </AnimatedLayout>
-                    )}
-                    {router.asPath === '/services/private' && (
-                        <AnimatedLayout>
-                            <ScrollablePrivateBuyPage />
-                        </AnimatedLayout>
-                    )}
-                    {router.asPath === '/services/mortgage' && (
-                        <AnimatedLayout>
-                            <ScrollableMortgagePage />
-                        </AnimatedLayout>
-                    )}
-                    {router.asPath === '/services/investments' && (
-                        <AnimatedLayout>
-                            <ScrollableInvestmentsPage />
-                        </AnimatedLayout>
-                    )}
-                    {router.asPath === '/about-us' && (
-                        <AnimatedLayout>
-                            <ScrollableAboutUsPage />
-                        </AnimatedLayout>
-                    )}
-                    {router.asPath === '/team' && (
-                        <AnimatedLayout>
-                            <ScrollableAboutUsPage />
-                        </AnimatedLayout>
-                    )}
-                </AnimatePresence>
+                {/*<ScrollableContent />*/}
+                {router.asPath === '/' && (
+                    <div className={styles.fadeIn}>
+                        <ScrollableHomePage />
+                    </div>
+                )}
+                {router.asPath === '/services/private' && (
+                    <div className={styles.fadeIn}>
+                        <ScrollablePrivateBuyPage />
+                    </div>
+                )}
+                {router.asPath === '/services/mortgage' && (
+                    <div className={styles.fadeIn}>
+                        <ScrollableMortgagePage />
+                    </div>
+                )}
+                {router.asPath === '/services/investments' && (
+                    <div className={styles.fadeIn}>
+                        <ScrollableInvestmentsPage />
+                    </div>
+                )}
+                {router.asPath === '/about-us' && (
+                    <div className={styles.fadeIn}>
+                        <ScrollableAboutUsPage />
+                    </div>
+                )}
+                {router.asPath === '/team' && (
+                    <div className={styles.fadeIn}>
+                        <ScrollableAboutUsPage />
+                    </div>
+                )}
                 {new Array(state.sections).fill(null).map((_, index) => (
                     <div
                         key={index}
