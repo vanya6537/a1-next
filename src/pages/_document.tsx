@@ -2,8 +2,8 @@
  * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
  */
 
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { state } from 'src/features/threejs/lib';
+import { Head, Html, Main, NextScript } from 'next/document';
+
 const MyDocument = () => {
     const GA_MEASUREMENT_ID = '';
     return (

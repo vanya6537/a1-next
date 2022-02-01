@@ -6,6 +6,8 @@ import React, { FC } from 'react';
 import styles from 'src/styles/Dropdown.module.scss';
 import cn from 'classnames';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
 export const Dropdown: FC<DropdownProps> = ({ title, items, className }) => {
     // up to 5 items animated, need more? change styles
     return (

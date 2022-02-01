@@ -17,15 +17,14 @@ export const AnimatedLayout = ({
 
     return (
         <motion.div
-            // initial="initial"
-            // animate="animate"
-            // transition={transition}
-            variants={staggerVariants}
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.15 }}
-            onScroll={onScroll}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+                type: 'spring',
+                stiffness: 20,
+                duration: 0.2,
+                delay: 0.2,
+            }}
         >
             {children}
         </motion.div>

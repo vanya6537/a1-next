@@ -4,13 +4,10 @@
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
-import React, { Suspense } from 'react';
+import React from 'react';
 import 'src/styles/globals.scss';
 import { Layout } from 'src/shared/ui/layout';
-import { ScrollArea } from 'src/shared/ui/scroll-area';
-import { CustomCanvas } from 'src/features/threejs/ui/canvas';
-import { Diamonds } from 'src/features/threejs/ui/diamonds';
-import { StartPlane } from 'src/features/threejs/ui/start-plane';
+import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 
 declare const window: any;
 
@@ -54,16 +51,15 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
                 }}
                 canonical={url}
             />
-            <Layout>
-                <CustomCanvas>
-                    <Suspense fallback={null}>
-                        <Component {...pageProps} canonical={url} key={url} />
-                    </Suspense>
-                    <Diamonds />
-                    <StartPlane />
-                </CustomCanvas>
-                <ScrollArea />
-            </Layout>
+            <AnimatePresence
+                exitBeforeEnter
+                // initial={false}
+                onExitComplete={() => window.scrollTo(0, 0)}
+            >
+                <Layout>
+                    <Component {...pageProps} canonical={url} key={url} />
+                </Layout>
+            </AnimatePresence>
         </>
     );
 }

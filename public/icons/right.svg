@@ -1,0 +1,40 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316 611" width="316" height="611">
+    <defs>
+        <linearGradient id="P" gradientUnits="userSpaceOnUse"/>
+        <linearGradient id="g1" x1="508.4" y1="531.3" x2="286.5" y2="-34.4" href="#P">
+            <stop stop-color="white"/>
+            <stop offset=".3" stop-color="white"/>
+            <stop offset=".6" stop-color="white"/>
+            <stop offset="1" stop-color="white"/>
+        </linearGradient>
+        <linearGradient id="g2" x1="344.6" y1="595.8" x2="122.6" y2="29.7" href="#P">
+            <stop stop-color="white"/>
+            <stop offset=".3" stop-color="white"/>
+            <stop offset=".6" stop-color="white"/>
+            <stop offset="1" stop-color="white"/>
+        </linearGradient>
+        <linearGradient id="g3" x1="340.6" y1="595.8" x2="118.6" y2="29.7" href="#P">
+            <stop stop-color="white"/>
+            <stop offset=".3" stop-color="white"/>
+            <stop offset=".6" stop-color="white"/>
+            <stop offset="1" stop-color="white"/>
+        </linearGradient>
+        <linearGradient id="g4" x1="528" y1="523.6" x2="306.1" y2="-42.2" href="#P">
+            <stop stop-color="white"/>
+            <stop offset=".3" stop-color="white"/>
+            <stop offset=".6" stop-color="white"/>
+            <stop offset="1" stop-color="white"/>
+        </linearGradient>
+        <linearGradient id="g5" x1="403.2" y1="572.8" x2="181.2" y2="6.8" href="#P">
+            <stop stop-color="white"/>
+            <stop offset=".3" stop-color="white"/>
+            <stop offset=".6" stop-color="white"/>
+            <stop offset="1" stop-color="white"/>
+        </linearGradient>
+    </defs>
+    <style>.s0{fill:url(#g1)}.s1{fill:url(#g2)}.s2{fill:url(#g3)}.s3{fill:url(#g4)}.s4{fill:url(#g5)}</style>
+    <path class="s0" d="m316 66.8l-94.7 94l2-6l92.7-92z"/>
+    <path class="s2" d="m138.8 238.7l-70.3 69.8l243.5 241.7v4l-247.4-245.7l74.3-73.8l86.1 88.1h-4z"/>
+    <path class="s3" d="m310.2 0.4h4l-136 135.1l-2.2-1.8z"/>
+    <path class="s4" d="m143.4 166.1l153.1 156.7h-3.9l-149.3-152.7l-139.3 138.4l304.4 302.3h-4l-304.4-302.3z"/>
+</svg>

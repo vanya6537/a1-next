@@ -13,11 +13,14 @@ body {
         Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
         sans-serif;
 
-    background: #0c0f13;
-    overflow: hidden;
+    //background: #00250b;
+    //overflow: hidden;
     //font-family: "Sulphur Point", sans-serif;
-    color: #8b8b8b;
+    color: white;
+    background: black;
+    scroll-behavior: smooth;
     //font-size: 0.9rem;
+    overflow-x: hidden;
 }
 
 a {

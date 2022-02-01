@@ -7,20 +7,23 @@ import { Navigation } from '../navigation';
 import styles from 'src/styles/Layout.module.scss';
 import { useRouter } from 'next/router';
 import { SideSlider } from 'src/shared/ui/side-slider';
-
+import { ScrollIndicator } from 'src/shared/ui/scroll-indicator';
+import { motion } from 'framer-motion';
 export const Layout: FC<LayoutProps> = ({ children }) => {
     const router = useRouter();
+
     return (
-        <div className={styles.layout}>
-            <header>
+        <motion.div className={styles.layout}>
+            <motion.header>
                 <Navigation />
-            </header>
-            <main>
+            </motion.header>
+            <motion.main>
                 <SideSlider />
                 {children}
-            </main>
+                <ScrollIndicator />
+            </motion.main>
 
-            <footer>{/*<Footer />*/}</footer>
-        </div>
+            <motion.footer>{/*<Footer />*/}</motion.footer>
+        </motion.div>
     );
 };

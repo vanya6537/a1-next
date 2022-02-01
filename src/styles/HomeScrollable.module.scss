@@ -1,120 +1,189 @@
 /*!
  * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
  */
+.bg {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.5;
+  display: none;
+
+  > .left {
+    position: relative;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    animation: slide-in 2s forwards;
+  }
+
+  > .right {
+    width: 50vw;
+    height: 100vh;
+    animation: slide-out 2s forwards;
+
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  100% {
+    transform: translateX(-60%) translateY(-20%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(100%) translateY(100%);
+  }
+  100% {
+    transform: translateX(60%) translateY(20%);
+  }
+}
 
 .hero {
-    position: relative;
-    width: 100%;
-    min-height: calc(100vh);
-    overflow-scrolling: auto;
-    color: white;
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh);
+  overflow: hidden;
+  color: white;
+  //background: linear-gradient(#ffffff, black);
+  > * {
+    z-index: 1;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("/images/a1-team-hero-bg.jpg");
+    background-blend-mode: saturation;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    //z-index: 1;
+    //opacity: 0.5;
+  }
 }
 
 @keyframes scale-up {
-    from {
-    }
-    to {
-        transform: scale(1.4);
-    }
+  from {
+  }
+  to {
+    transform: scale(1.4);
+  }
 }
 
 .content {
-    padding-right: 7%;
-    padding-left: 7%;
-    z-index: 1;
-    height: 100vh;
+  z-index: 1;
+  height: 100vh;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    > .rectangle {
-        pointer-events: none;
-    }
-    > .slidesCounter {
-        pointer-events: none;
-    }
+  position: relative;
 
-    > .text {
-        pointer-events: none;
-    }
+  > .rectangle {
+    pointer-events: none;
+  }
+
+  > .slidesCounter {
+    pointer-events: none;
+  }
+
+  > .text {
+    pointer-events: none;
+  }
 }
-.slidesCounter {
-    max-width: 300px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
 
-    padding-top: 80px;
-    padding-bottom: 40px;
-    font-size: 16px;
+.slidesCounter {
+  max-width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+  padding-top: 80px;
+  padding-bottom: 40px;
+  font-size: 16px;
 }
 
 .currentSlide {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .slidesSpacer {
-    height: 2px;
-    width: 150px;
-    background: white;
-    margin: 0 40px 0 40px;
+  height: 2px;
+  width: 150px;
+  background: white;
+  margin: 0 40px 0 40px;
 }
 
 .text {
-    font-size: 48px;
-    color: white;
-    //margin-right: 30px;
-    text-align: center;
+  font-size: 48px;
+  color: white;
+  //margin-right: 30px;
+  text-align: center;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .button {
-    position: absolute;
-    bottom: 100px;
+  font-size: 14px;
 }
 
 .noSelect {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
 @media (min-width: 500px) {
-    .button {
-        position: relative;
-        bottom: 0;
-    }
+  .button {
+    position: relative;
+    bottom: 0;
+    font-size: 20px;
+  }
+  .text {
+    font-size: 64px;
+    text-align: start;
+  }
+  .slidesSpacer {
+    width: 150px;
+    margin: 0 40px 0 40px;
+  }
+  .slidesCounter {
+    padding-top: 160px;
+    padding-bottom: 80px;
+    font-size: 24px;
+  }
+}
 
-    .content{
-        padding-left: 15%;
-        padding-right: 0;
 
-        display: block;
-    }
-    .hero{
-        padding-right: 0;
-    }
-    .text {
-        font-size: 64px;
-        text-align: start;
-    }
-    .slidesSpacer {
-        width: 150px;
-        margin: 0 40px 0 40px;
-    }
-    .slidesCounter {
-        padding-top: 160px;
-        padding-bottom: 80px;
-        font-size: 24px;
-    }
+.btnWrapper {
+  position: absolute;
+  bottom: 80px;
+  left: 10vw;
+  //left: calc(20vw - 50%);
+}
+
+@media (min-width: 700px) {
+  .btnWrapper {
+    bottom: 60px;
+    left: 13vw;
+
+    //left: calc(50%;
+  }
 }

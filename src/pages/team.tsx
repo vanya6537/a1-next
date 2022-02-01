@@ -4,28 +4,10 @@
 
 import type { NextPage } from 'next';
 import React from 'react';
-import ScrollableHomePage from 'src/pages/index';
-import { ContentHome } from 'src/features/threejs/ui/content-home';
-import { Block, useBlock } from 'src/features/threejs/ui/block';
-import { Text as BlockText } from 'src/features/threejs/ui/text';
+import { AnimatedLayout } from 'src/shared/ui/animated-layout';
 
 const TeamPage: NextPage = () => {
-    const { contentMaxWidth: w } = useBlock();
-
-    return (
-        <Block factor={1} offset={0}>
-            <Block factor={1.2}>
-                <BlockText
-                    left
-                    size={w * 0.15}
-                    position={[-w / 3.2, 0.5, -1]}
-                    color="#d40749"
-                >
-                    Team
-                </BlockText>
-            </Block>
-        </Block>
-    );
+    return <AnimatedLayout>Team</AnimatedLayout>;
 };
 
 export default TeamPage;

@@ -1,0 +1,13 @@
+/*!
+ * Copyright (c) 2022 (original work) Ivan Katkov <vanya6537@gmail.com>;
+ */
+
+.scrollIndicator {
+  width: 40px;
+  height: 40px;
+  color: white;
+  position: fixed;
+  left: 2vw;
+  bottom: 2vh;
+  z-index: 2;
+}
