@@ -6,7 +6,7 @@ import React, { FC, useEffect, useMemo, useState } from 'react';
 import styles from 'src/styles/Navigation.module.scss';
 import Link from 'next/link';
 import { Dropdown } from 'src/shared/ui/dropdown';
-import Image from 'next/Image';
+import Image from 'next/image';
 import { SideMenu } from 'src/shared/ui/side-menu';
 import { motion } from 'framer-motion';
 
@@ -55,13 +55,6 @@ export const Navigation: FC<NavigationProps> = () => {
                     ],
                     scale: !isMobile ? [10, 10, 10, 10, 1] : [8, 8, 8, 8, 1],
                     opacity: [0, 1, 1, 1, 1],
-                    // color: [
-                    //     'white',
-                    //     'rgb(15, 48, 52)',
-                    //     'rgb(15, 48, 52)',
-                    //     'rgb(15, 48, 52)',
-                    //     'rgb(15, 48, 52)',
-                    // ],
                 }}
                 transition={{
                     duration: 5,
