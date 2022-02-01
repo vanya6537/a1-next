@@ -34,11 +34,26 @@ export const Navigation: FC<NavigationProps> = () => {
     const translateY = useMemo(() => height / 2.5, [height]);
 
     return (
-        <motion.nav className={styles.header}>
+        <motion.nav
+            className={styles.header}
+            initial={{
+                opacity: 0,
+            }}
+            whileInView={{
+                opacity: 1,
+                translateY: 0,
+                transition: {
+                    type: 'spring',
+                    stiffness: 20,
+                    duration: 2,
+                    delay: 0.5,
+                },
+            }}
+        >
             <motion.div
                 className={styles.icon}
                 animate={{
-                    rotate: [0, 0, 0, 30, 360],
+                    rotate: [0, 0, 0, 0, 0],
                     translateX: [
                         translateX,
                         translateX,
@@ -53,13 +68,17 @@ export const Navigation: FC<NavigationProps> = () => {
                         translateY,
                         0,
                     ],
-                    scale: !isMobile ? [10, 10, 10, 10, 1] : [8, 8, 8, 8, 1],
+                    scale: !isMobile ? [6, 10, 6, 10, 1] : [8, 8, 8, 8, 1],
                     opacity: [0, 1, 1, 1, 1],
                 }}
                 transition={{
                     duration: 5,
-                    ease: 'easeInOut',
-                    times: [0, 0.2, 0.5, 0.8, 1],
+                    // ease: 'easeInOut',
+                    // times: [0, 0.2, 0.5, 0.8, 1],
+                    type: 'spring',
+                    stiffness: 20,
+                    // duration: 2,
+                    // delay: 0.5,
                     // repeat: Infinity,
                     // repeatDelay: 1,
                     delay: 1,

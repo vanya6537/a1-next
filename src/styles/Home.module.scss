@@ -10,6 +10,7 @@ $green: #0f3034;
   height: 300px;
   top: 0;
   //transform: translateY(-300px);
+  z-index: 0;
 }
 
 .relative {
@@ -68,12 +69,11 @@ $iconSize: 120px;
     flex-direction: row;
     justify-content: center;
     padding: 40px;
-
+    z-index: 2;
 
     > li {
       padding: 0 20px;
-      //pointer-events: none;
-
+      pointer-events: none;
       img {
         width: $iconSize;
         height: $iconSize;
@@ -94,7 +94,7 @@ $iconSize: 120px;
     color: white;
     text-align: center;
     font-size: 32px;
-    padding: 80px;
+    padding-top: 20px;
   }
 
   & > .catalogItems {

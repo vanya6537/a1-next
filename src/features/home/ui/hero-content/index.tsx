@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Button } from 'src/features/home/ui/button';
 import cn from 'classnames';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export const HeroContent: FC<HeroContentProps> = ({ className }) => {
     return (
@@ -29,13 +30,28 @@ export const HeroContent: FC<HeroContentProps> = ({ className }) => {
                 {/*    <br />*/}
                 {/*    <span className={styles.bold}>КОТОРУЮ ТЫ ХОЧЕШЬ</span>*/}
                 {/*</p>*/}
-                <div className={styles.btnWrapper}>
+                <motion.div
+                    className={styles.btnWrapper}
+                    initial={{
+                        opacity: 0,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        transition: {
+                            type: 'spring',
+                            stiffness: 20,
+                            duration: 2,
+                            delay: 0.5,
+                        },
+                    }}
+                    viewport={{ once: true }}
+                >
                     <Link href={'/about-us'}>
                         <Button className={cn(styles.button, styles.noSelect)}>
-                            Получить помощь
+                            Подбор недвижмости
                         </Button>
                     </Link>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
